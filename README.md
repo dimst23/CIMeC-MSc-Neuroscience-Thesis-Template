@@ -11,6 +11,10 @@ There are only a few things to change in order to add your own information in th
 - **`main.tex`**: Here you can add your `title` and `name` again in the relevant sections at lines 6-7. If you want a specific date then add that in the format of `April 2024`.
 - **`glossary.tex`**: Here you define any terms you have and so on. There are planty of tutorials on how to use glossaries in latex.
 
+## Compilation
+
+Whether you use the template locally or on [Overleaf](https://www.overleaf.com), you have to select the `XeLaTeX` compiler otherwise it will not compile.
+
 ## General
 
 Feel free to modify anything within the template, even changing the structure of the whole thesis and keeping only the front page. It is free for a reason. Alwaus abide by the license within this repository when modifying and using the provided template.
