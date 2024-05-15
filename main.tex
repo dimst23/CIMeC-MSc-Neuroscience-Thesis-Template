@@ -1,0 +1,42 @@
+\documentclass[titlepage,a4paper,openright,twoside,10pt]{report}
+
+\input{preamble}
+
+%%%% Document title and author
+\title{Thesis title}
+\author{Author}
+\date{}
+
+\begin{document}
+
+    \pagenumbering{roman}
+    \input{sections/0-cover}
+    
+    \cleardoublepage
+    \input{sections/0-abstract}
+    
+    \cleardoublepage
+    \input{sections/0-preface}
+
+    \input{glossary}
+    \tableofcontents
+    \printglossaries
+    \listoffigures
+    \listoftables
+
+    % Main sections
+    \pagebreak
+    \pagenumbering{arabic}
+    \input{sections/1-introduction}
+    \input{sections/2-methods}
+    \input{sections/3-results}
+    \input{sections/4-discussion}
+
+    % Print the references
+    \pagebreak
+    \printbibliography[heading=bibintoc]
+    
+    \appendix
+    \input{appendices/0-placeholder}
+
+\end{document}

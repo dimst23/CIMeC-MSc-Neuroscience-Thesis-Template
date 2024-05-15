@@ -1,0 +1,126 @@
+% ---PACKAGES - START---
+\usepackage[top=3.5cm, left=3cm, right=3cm, bottom=2.5cm, headheight=14pt]{geometry}
+
+\usepackage{lipsum} % You can safely remove this as it will not be needed in your thesis (hopefully :)).
+
+\usepackage{fancyhdr}
+\usepackage{amsmath,amssymb}
+\usepackage{amsfonts}
+\usepackage[dvips]{graphicx}
+\usepackage{dsfont}
+\usepackage{balance}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fontspec}
+
+% Citations and glossaries
+\usepackage[toc,nonumberlist,nopostdot,acronyms,automake]{glossaries}
+\usepackage[style=apa]{biblatex}
+\usepackage{bookmark}
+
+% Symbols
+% \usepackage{gensymb}
+
+% Bold math
+\usepackage{bm}
+
+% Bold captions
+\usepackage[labelfont=bf]{caption}
+
+% Wrap figures around text
+\usepackage{wrapfig}
+
+% Hyperlinks
+\usepackage{hyperref}
+
+% Custom colors
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+
+% Giving \thetitle functionality
+\usepackage{titling}
+
+\usepackage{nicefrac}
+\usepackage{multicol}
+
+\usepackage{cleveref}
+% ---PACKAGES - STOP---
+
+
+% ---COLORS - START---
+\definecolor{custom_red}{rgb}{0.5843, 0.1608, 0.153}
+\definecolor{custom_blue}{rgb}{0.1608, 0.153, 0.5843}
+% ---COLORS - STOP---
+
+
+% ---CONFIG - START---
+% Prevent huge spaces from the twoside option
+\raggedbottom
+
+\definecolor{dark_grey}{HTML}{303030}
+\hypersetup{
+    pdfauthor   = {Author}, % Add the main author
+    pdftitle    = {Title}, % Change this to the normal title
+    pdfsubject  = {Master's thesis at the Center of Mind/Brain Sciences at the University of Trento},
+    pdfkeywords = {Neuroscience} {Keyword1} {Keyword2} {Keyword3}, % Add relevant keywords following this format
+    colorlinks = true,
+    linkcolor = dark_grey,
+    urlcolor = custom_blue,
+    citecolor = custom_red,
+    bookmarksnumbered,
+}
+\addbibresource{references.bib}
+
+% Highlight draft areas
+\newcommand{\draft}[1]{{\leavevmode\color{red!90!black}#1}}
+
+% Increase section depth
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\titleformat{\paragraph} [hang] {\normalfont\normalsize\bfseries} {\theparagraph} {1em} {}
+
+%% Intentionally left blank message
+% https://gist.github.com/philipptempel/5220000
+\makeatletter
+    \def\cleardoublepage{\clearpage%
+        \if@twoside
+            \ifodd\c@page\else
+                \vspace*{\fill}
+                \hfill
+                \begin{center}
+                This page intentionally left blank.
+                \end{center}
+                \vspace{\fill}
+                \thispagestyle{empty}
+                \newpage
+                \if@twocolumn\hbox{}\newpage\fi
+            \fi
+        \fi
+    }
+\makeatother
+%% End Intentionally left blank message
+
+% Here you can change the font if you'd like
+\setmainfont{GFS Didot}
+
+\makeglossaries
+% ---CONFIG - STOP---
+
+
+% ---PAGE FORMATTING - START---
+%% Fancy header settings
+\pagestyle{fancy}
+
+\fancyhf{} % Clear all header and footer
+
+% Add the page number on the header in plain style pages
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhf[LEH,ROH]{\thepage}
+}
+
+\fancyhead[RE]{\itshape\nouppercase{\leftmark}}
+\fancyhead[LO]{\itshape\nouppercase{\rightmark}}
+\fancyhead[LE,RO]{\thepage}
+% ---PAGE FORMATTING - STOP---
