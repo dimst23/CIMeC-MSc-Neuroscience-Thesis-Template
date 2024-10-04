@@ -126,5 +126,7 @@
 % ---PAGE FORMATTING - STOP---
 
 \newcommand{\academicyear}{%
-  \the\year/\the\numexpr\year+1\relax%
+  \ifthenelse{\month<11} % Condition: if the current month is before November
+    {\the\numexpr\year-1\relax/\the\year} % Use the previous year and current year, if before the specified month
+    {\the\year/\the\numexpr\year+1\relax} % Use the current year and the next year, if after the specified month
 }
